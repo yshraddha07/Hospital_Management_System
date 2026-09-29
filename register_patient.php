@@ -17,7 +17,23 @@ if (isset($_POST["save"])) {
 
     if ($stmt->execute()) {
         if (!isset($_SESSION["undo_stack"])) $_SESSION["undo_stack"] = [];
-        $_SESSION["undo_stack"][] = ["type" => "add_patient", "id" => $conn->insert_id, "name" => $name];
+        if (!isset($_SESSION["redo_stack"])) $_SESSION["redo_stack"] = [];
+        $_SESSION["redo_stack"] = [];
+        $_SESSION["undo_stack"][] = [
+            "type" => "add_patient",
+            "id" => $conn->insert_id,
+            "name" => $name,
+            "patient" => [
+                "id" => $conn->insert_id,
+                "name" => $name,
+                "age" => $age,
+                "gender" => $gender,
+                "phone" => $phone,
+                "address" => $address,
+                "blood_group" => $blood_group,
+                "department" => $department
+            ]
+        ];
         $message = "Patient registered successfully!";
     } else {
         $message = "Something went wrong.";

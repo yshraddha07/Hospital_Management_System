@@ -26,7 +26,7 @@ $current = basename($_SERVER["PHP_SELF"]);
     <a class="<?php echo $current == 'emergency.php' ? 'active' : ''; ?>" href="emergency.php">🚨 Emergency</a>
     <a class="<?php echo $current == 'beds.php' ? 'active' : ''; ?>" href="beds.php">🛏 Beds & Rooms</a>
     <a class="<?php echo $current == 'billing.php' ? 'active' : ''; ?>" href="billing.php">💰 Billing</a>
-    <a class="<?php echo $current == 'undo.php' ? 'active' : ''; ?>" href="undo.php">↩️ Undo Operations</a>
+    <a class="<?php echo $current == 'undo.php' ? 'active' : ''; ?>" href="undo.php">↩️ Undo / Redo Operations</a>
     <a class="<?php echo $current == 'departments.php' ? 'active' : ''; ?>" href="departments.php">🌳 Departments</a>
     <a class="<?php echo $current == 'dsa_lab.php' ? 'active' : ''; ?>" href="dsa_lab.php">🧠 DSA Lab</a>
     <a class="logout" href="logout.php">🚪 Logout</a>

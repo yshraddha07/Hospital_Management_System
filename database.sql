@@ -44,6 +44,7 @@ CREATE TABLE emergency_queue (
 CREATE TABLE medical_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     patient_id INT,
+    record_date DATE,
     diagnosis VARCHAR(150),
     treatment VARCHAR(150),
     doctor VARCHAR(100)
